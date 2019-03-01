@@ -114,6 +114,10 @@ class RocketMqClient
      */
     public function sendDelayMsg( string $topic, string $tags, string $msg, int $seconds, string $key = null )
     {
+        if( $seconds >40*24*60*60 ){
+            throw new \Exception( '延时时间不能大于40天' );
+        }
+
         try {
             $this->transport->open();
             $msg = new DelayMessage( ['topic' => $topic, 'tags' => $tags, 'msg' => $msg, 'seconds' => $seconds] );
