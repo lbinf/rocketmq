@@ -1,0 +1,29 @@
+{
+  "name": "lbinf/rocketmq",
+  "description": "This is php rocketMq server and client",
+  "keywords": ["PHP", "rocketMq", "thrift", "wokerman"],
+  "homepage": "",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "lbinf",
+      "email": "290887098@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "workerman/workerman": "~3.5"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "Thrift\\": "src/Thrift",
+      "RocketMqClient\\": "src/rocketMqClient",
+      "WorkermanThrift\\": "src/WorkermanThrift"
+    },
+    "classmap": ["src/Services/"]
+  }
+}
